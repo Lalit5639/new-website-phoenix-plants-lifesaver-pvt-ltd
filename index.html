@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Phoenix Plants Lifesaver Pvt. Ltd.">
+    <meta name="keywords" content="agriculture, fertilizer, biotech, sustainable farming, distributor network">
+    <title>Phoenix Plants Lifesaver Pvt. Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Header (Simple Nav) -->
+    <header style="background: rgba(255,255,255,0.9); padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); backdrop-filter: blur(10px); position: sticky; top: 0; width: 100%; z-index: 1000;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <img src="assets/png7.png" alt="Phoenix Plants Lifesaver Pvt. Ltd. Logo" height="40" class="logo-img">
+            <h1 class="company-name" style="margin: 0; color: #001b01; font-size: 1.5em;">Phoenix Plants Lifesaver Pvt. Ltd.</h1>
+            <nav>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="product.html" onclick="closeMenu()">Products</a></li>
+                    <li><a href="#technology" onclick="closeMenu()">Technology</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page (Hero with 2-Side Layout: Image Slider on Left, Description on Right) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left Side: Image with Sliders -->
+                <div class="hero-left">
+                    <div class="slider">
+                        <img src="assets/h1.jpg" alt="Phoenix Plants Lifesaver Pvt. Ltd." class="active">
+                        <img src="assets/h2.jpg" alt="Soil health image 2">
+                        <img src="assets/h3.jpg" alt="Crop yields image 3">
+                    </div>
+                    <div class="slider-controls">
+                        <span class="slider-dot active" onclick="showSlide(0)"></span>
+                        <span class="slider-dot" onclick="showSlide(1)"></span>
+                        <span class="slider-dot" onclick="showSlide(2)"></span>
+                    </div>
+                </div>
+                <!-- Right Side: Description -->
+                <div class="hero-right">
+                    <h1>Sustainable Agricultural Solutions for Modern Farming</h1>
+                    <p>Empowering farmers with innovative biotech fertilizers for healthier soil, higher yields, and a greener planet. Our products are designed to combat degradation and promote eco-friendly growth.</p>
+                    <a href="#distributor" class="btn1">Join Distributor Network</a>
+                    <a href="#products" class="btn2" style="margin-left: 15px;">Explore Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Snapshot -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="assets/who.png" alt="Our Mission" style="border-radius: 15px; margin-bottom: 15px; font-weight: 700; height: 250px;">
+                    <h3>Who We Are</h3>
+                    <p>We started our journey in 2019 with a vision to make a transforming impact in agriculture society. We observed the problems and issues of the 
+                        basic Agriculture System. We address the challenge of farming in typical rural areas and started working to find the 
+                        solutions from the grass-roots level. At first, we marked the challenges of farmers that were stopping them from uplifting their farming culture. 
+                        After this, we addressed the problems of the whole retail channel, which is forcing them to stick to traditional business practices. These practices are 
+                        outdated and have lower financial returns. We acknowledged the network across the country and found significant trouble in terms of core fertilizer 
+                        production and distribution stations. We worked with farmers, retailers, and traders in multiple geographical areas. After gathering all this data, 
+                        we stabilized Phoenix Plants Lifesaver Pvt Ltd with a vision to make a transforming impact in Agriculture Society.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/mission.png" alt="Our Vision" style="border-radius: 15px; margin-bottom: 15px; height: 250px">
+                    <h3>Our Mission</h3>
+                    <p>We are going to transform the whole service channel of chemical fertilizers in Indian Agriculture system. Which is running from decades on the same 
+                        patterns and terminology. Our Mission is to provide the quality and productivity to the farmers with our 
+                        products and services without challenging their beliefs, delivering faith and internal business opportunities to the whole established service channel, 
+                        which they deserve and never got before due to the current service system. We are committed to change the stacies and reliability on 
+                        imported chemical fertilizers and stabilize an "Made in India" service systems under the norms and approach of FCO and Indian Government. 
+                        This will express our passion towards transforming this Agriculture system in INDIA.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/vision.png" alt="Our Team" style="border-radius: 15px; margin-bottom: 15px; height: 250px">
+                    <h3>Our Team</h3>
+                    <p>We developed a unique range of products and services in core fertilizers segment under the FCO guidelines of the Indian Government. 
+                        We spread our services across various geographical areas, and found our concept and services can 
+                        make a huge impact. Currently, we fulfill a major part of core fertilizers needed in Northern India, and are committed to continuous 
+                        improvement through our R&D division, equipped with modern experimental facilities. We look forward to developing more qualified 
+                        quality control management and establishing strict adherence to all quality norms, ensuring delivery of top-quality products 
+                        and services.We promise to give a faithful, uplifting, and sustainable service to the National Agriculture Society.</p>
+                </div>
+                <a href="Dharohar Catalogue 2025.pdf" download class="btn" style="color: rgb(255, 255, 255); margin-left: 15px;">Download Our Catalogue...</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem → Solution -->
+    <section class="section" style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);">
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <h3>❌ Problem</h3>
+                    <p>Soil degradation, low yields, and overuse of chemicals harming ecosystems and farmer health.</p>
+                </div>
+                <div class="card">
+                    <h3>✅ Solution</h3>
+                    <p>Our bio-fertilizers restore soil health, enhance growth, and promote sustainable farming practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology / Process Icons -->
+    <section class="section">
+        <div class="container">
+            <h2>Our Process</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">🌱</div>
+                    <h3>Produce</h3>
+                    <p>Develop bio-fertilizers in our state-of-the-art R&D labs.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💧</div>
+                    <h3>Apply</h3>
+                    <p>Easy application for farmers worldwide, with expert guidance.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌿</div>
+                    <h3>Grow</h3>
+                    <p>Boost plant growth and soil vitality for thriving crops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="products" class="section" style="background: white;">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="ALL PRO/P1.png" alt="BioFert Pro product" style="border-radius: 15px; margin-bottom: 15px; height: 250px;" >
+                    <h3>Bharat N.P.K.</h3>
+                    <p>Enhances root development and nutrient uptake for stronger plants.</p>
+                    <a href="product.html" class="btn">View Details</a>
+                </div>
+                <div class="card">
+                    <img src="ALL PRO/P17.png" alt="SoilBoost product" style="border-radius: 15px; margin-bottom: 15px; height: 250px;">
+                    <h3>Complete DOSE</h3>
+                    <p>Restores degraded soil with organic microbes and natural enzymes.</p>
+                    <a href="product.html" class="btn">View Details</a>
+                </div>
+                <div class="card">
+                    <img src="ALL PRO/P2.jpg" alt="YieldMax product" style="border-radius: 15px; margin-bottom: 15px; height: 250px;">
+                    <h3>Bharat Potash</h3>
+                    <p>Increases crop yields by up to 30% sustainably, without chemicals.</p>
+                    <a href="product.html" class="btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Videos Section -->
+    <section class="section" style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);">
+        <div class="container">
+            <h2>Latest News</h2>
+            <div class="grid">
+                <div class="card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/c00770rP1gU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 15px; margin-bottom: 15px;"></iframe>
+                    <h3> किसानों से जुड़ी प्रमुख खबरें 🌾</h3>
+                    <p>Join our upcoming demo on sustainable practices and product application.</p>
+                </div>
+                <div class="card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/468JL55t3iI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 15px; margin-bottom: 15px;"></iframe>
+                    <h3>🌾राष्ट्रीय किसान दिवस 🌾(NATIONAL FARMERS' DAY) 🌱</h3>
+                    <p>Introducing eco-friendly fertilizers tailored for urban and organic farming.</p>
+                </div>
+                <div class="card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/c00770rP1gU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 15px; margin-bottom: 15px;"></iframe>
+                    <h3>📺 DHAROHAR BULLETIN | उत्तर प्रदेश कृषि समाचार |</h3>
+                    <p>Join our upcoming demo on sustainable practices and product application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <h2>What Farmers Say</h2>
+            <div class="grid">
+                <div class="card">
+                    <p style="font-style: italic;">"These fertilizers doubled my crop yield sustainably—game-changer!"</p>
+                    <p>- Rajesh Kumar, Farmer <span style="color: #FFD700;">⭐⭐⭐⭐⭐</span></p>
+                </div>
+                <div class="card">
+                    <p style="font-style: italic;">"Trusted partner for our distributor network—excellent support."</p>
+                    <p>- Priya Distributors <span style="color: #FFD700;">⭐⭐⭐⭐⭐</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Gallery -->
+    <section class="section" style="background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="grid">
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/prizebaliyan.jpg" alt="CEO" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Prize Baliyan</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/vatanbaliyan.jpg" alt="CTO" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Vatan Baliyan</h3>
+                    <p>Director & Co-Founder</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/mohan1.jpg" alt="Head of R&D" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Mohan Vaidwan</h3>
+                    <p>Director & Head of Development Manager</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/mohit1.jpg" alt="Marketing Manager" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Mohit Vaidwan</h3>
+                    <p>Head Of Marketing Manager</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/badalbaliyan.jpg" alt="CEO" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Badal Baliyan</h3>
+                    <p>Logistice Manager</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/shubham.jpg" alt="CTO" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Shubham Rana</h3>
+                    <p>Team Leader</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/love1.jpg" alt="Head of R&D" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Love Kumar</h3>
+                    <p>Production Manager</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/avik1.jpg" alt="Marketing Manager" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Avik Baliyan</h3>
+                    <p>HRM Department</p>
+                </div>
+                <div class="card" onclick="animateCard(this)">
+                    <img src="gallary/ashutosh kandari edited photo.png" alt="CEO" style="border-radius: 15px; margin-bottom: 15px; width: 100%; height: 350px; object-fit: cover;">
+                    <h3>Ashutosh Kandari</h3>
+                    <p>Chief Financial Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2>FAQs</h2>
+            <div class="accordion" onclick="toggleFAQ(this)">How do I apply the fertilizers?</div>
+            <div class="accordion-content">Mix with water and spray on soil for best results. Detailed guides available on our product pages.</div>
+            <div class="accordion" onclick="toggleFAQ(this)">Are they safe for organic farming?</div>
+            <div class="accordion-content">Yes, fully organic and certified for eco-friendly use.</div>
+        </div>
+    </section>
+
+    <!-- Distributor CTA -->
+    <section id="distributor" class="section" style="background: linear-gradient(135deg, #163317 0%, #000000 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white;">Join Our Distributor Network</h2>
+            <p>हमारे साथ जुड़ने के लिए आप यहाँ आवेदन पत्र Download करे और हमारे क्षेत्रिय अधिकारी से संपर्क करे तथा हमारे टोल फ्री नंबर पैर कॉल करे</p>
+            <!-- <a href="#" class="btn" style="color: rgb(255, 255, 255);">Become a Distributor</a> -->
+            <a href="Dharohar authority_letter_application[1].pdf" download class="btn" style="color: rgb(255, 255, 255); margin-left: 15px;">Download Distributor Application Form</a>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider img');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.remove('active');
+        }
+
+        function animateCard(element) {
+            element.classList.add('animate');
+            setTimeout(() => {
+                element.classList.remove('animate');
+            }, 500);
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            const form = document.getElementById('feedbackForm');
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+            const text = `Feedback from ${name} (${email}): ${message}`;
+            const phone = '918126354387'; // Your WhatsApp number
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer id="contact" style="background: #002202; color: white; padding: 40px 0; margin-top: 80px;">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div>
+                    <h3 style="color: white;">Phoenix Plants Lifesaver Pvt. Ltd.</h3>
+                    <p>Pioneers in sustainable agriculture, providing innovative biotech fertilizers for healthier soil and higher yields.</p>
+                    <p>&copy; 2026 Phoenix Plants Lifesaver Pvt. Ltd. All rights reserved.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
+                        <li><a href="product.html" style="color: white; text-decoration: none;">Products</a></li>
+                        <li><a href="#technology" style="color: white; text-decoration: none;">Technology</a></li>
+                        <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <p>Email: support@phoenixplantslifesaverpvtltd.com</p>
+                    <p>Phone: 1800 569 3914</p>
+                    <p>Regd. Office : S.NO. COD, 3rd Floor, Dharampali Palace Bhoja Market,0 Atta-Sector-27, Noida-201301 (U.P.) INDIA</p>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="color: white; text-decoration: none; font-size: 1.5em;"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#" style="color: white; text-decoration: none; font-size: 1.5em;"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color: white; text-decoration: none; font-size: 1.5em;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: white; text-decoration: none; font-size: 1.5em;"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Feedback</h4>
+                    <form id="feedbackForm" onsubmit="sendToWhatsApp(event)" style="display: flex; flex-direction: column; gap: 10px;">
+                        <input type="text" name="name" placeholder="Your Name" required style="padding: 8px; border: none; border-radius: 4px;">
+                        <input type="email" name="email" placeholder="Your Email" required style="padding: 8px; border: none; border-radius: 4px;">
+                        <textarea name="message" placeholder="Your Feedback" rows="3" required style="padding: 8px; border: none; border-radius: 4px; resize: vertical;"></textarea>
+                        <button type="submit" style="padding: 8px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
