@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5fbf6;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.hero {
+  padding: 80px 0;
+  background: linear-gradient(#ffffff, #f0f8f2);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  color: #1b5e20;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+.primary {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.outline {
+  border: 2px solid #2e7d32;
+  color: #2e7d32;
+}
+
+/* IMAGE */
+.hero-image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+.about {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.problem-solution {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.process {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+.step {
+  background: #e8f5e9;
+  padding: 20px;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+.products {
+  padding: 60px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.cta {
+  background: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}

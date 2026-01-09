@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Fertilizers - Product Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #153a21 0%,#1e492c 0%, #013903 100%);
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #ffd54f;
+        }
+        
+        .logo-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            word-break: break-word;
+        }
+        
+        .logo-text p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .language-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Controls Section */
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .search-box {
+            flex-grow: 1;
+            min-width: 250px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            border-color: #4caf50;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: #f1f8e9;
+            border: 2px solid #c5e1a5;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #558b2f;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            background: #dcedc8;
+        }
+        
+        .filter-btn.active {
+            background: #4caf50;
+            border-color: #4caf50;
+            color: white;
+        }
+        
+        /* Product Grid */
+        .product-count {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        
+        .product-count span {
+            font-weight: 700;
+            color: #2d7d46;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e8f5e9;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-id {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.75rem;
+            color: white;
+            background: rgba(45, 125, 70, 0.85);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            z-index: 2;
+            max-width: calc(100% - 100px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+            color: white;
+            background: rgba(76, 175, 80, 0.9);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            max-width: calc(100% - 100px);
+            white-space: nowrap;
+        }
+        
+        .product-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            width: 100%;
+        }
+        
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        
+        .product-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .info-label {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #333;
+            word-break: break-word;
+        }
+        
+        .product-description {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #555;
+            flex-grow: 1;
+            width: 100%;
+        }
+        
+        .product-crops {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            margin-top: auto;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+        .crops-icon {
+            color: #ff9800;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        
+        footer .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 50px 20px;
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+        
+        .no-results-icon {
+            font-size: 3rem;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        
+        .no-results h3 {
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                min-width: 100%;
+            }
+            
+            .category-filters {
+                justify-content: center;
+            }
+            
+            .container, .header-content {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .product-name {
+                font-size: 1.1rem;
+            }
+            
+            .container, .header-content {
+                padding: 0 10px;
+            }
+        }
+        
+        /* Animation for cards */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Image placeholder styling */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #c5e1a5 0%, #aed581 100%);
+            color: #33691e;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .placeholder-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .image-source {
+            font-size: 0.7rem;
+            color: #666;
+            text-align: right;
+            padding: 5px 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/png7.png" alt="" class="logo-icon" height="60">
+                <div class="logo-text">
+                    <h1 id="company-name">Phoenix Plants Lifesaver Pvt. Ltd.</h1>
+                    <p id="company-tagline">शुद्धता एवं समृद्धि का प्रतीक...!</p>
+                </div>
+            </div>
+            <button class="language-toggle" id="languageToggle">
+                <i class="fas fa-language"></i>
+                <span id="languageText">Switch to Hindi</span>
+            </button>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="controls">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search products by name, category, or crops...">
+            </div>
+            
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="primary">Primary Fertilizers</button>
+                <button class="filter-btn" data-category="micro">Micro Nutrients</button>
+                <button class="filter-btn" data-category="water">Water Soluble</button>
+                <button class="filter-btn" data-category="advanced">Advanced / PGR</button>
+            </div>
+        </section>
+        
+        <div class="product-count">
+            Showing <span id="productCount">0</span> products
+        </div>
+        
+        <div class="product-grid" id="productGrid">
+            <!-- Product cards will be dynamically inserted here -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2019 Phoenix Plants Lifesaver Pvt. Ltd. Fertilizers. All rights reserved. | For agricultural use only.</p>
+            <p>Always follow recommended dosage and application instructions.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Product data with image URLs
+        const products = [
+            /* ================= PRIMARY FERTILIZERS ================= */
+            // {
+            //     id:"bharat-npk-222211",
+            //     name_en:"Bharat NPK <br> 22:22:11",
+            //     name_hi:"भारत NPK 22:22:11",
+            //     category:"primary",
+            //     packing:"50 Kg",
+            //     dosage:"50 Kg / Acre (Soil)",
+            //     description:"Balanced NPK fertilizer improves flowering, fruit quality, and yield.",
+            //     crops:"All crops",
+            //     image:"all pro/BHARAT NPK.png"
+            // },
+            {
+                id:"bharat-npk-sicamg",
+                name_en:"Bharat NPK <br> (With Si, Ca & Mg)",
+                name_hi:"भारत NPK (सिलिका, कैल्शियम, मैग्नीशियम)",
+                category:"primary",
+                packing:"50 Kg",
+                dosage:"50 Kg / Acre (Soil)",
+                description:"Improves plant strength, flowering, and soil structure.",
+                crops:"All crops",
+                image:"all pro/bharat npk.png"
+            },
+            {
+                id:"bharat-potash",
+                name_en:"Bharat Potash <br> (20% K, 1.5% S)",
+                name_hi:"भारत पोटाश",
+                category:"primary",
+                packing:"50 Kg",
+                dosage:"50 Kg / Acre (Soil)",
+                description:"Improves nutrient translocation and crop quality.",
+                crops:"All crops",
+                image:"all pro/BHARAT POTASH.png"
+            },
+            {
+                id:"phino-potash",
+                name_en:"Phino Potash <br> (PDM – 14.5% K2O)",
+                name_hi:"फिनो पोटाश",
+                category:"primary",
+                packing:"50 Kg",
+                dosage:"50 Kg / Acre (Soil)",
+                description:"Potash derived from molasses improves soil fertility.",
+                crops:"All crops",
+                image:"all pro/PHINO POTASH.png"
+            },
+            {
+                id:"mono-ssp",
+                name_en:"Mono SSP",
+                name_hi:"मोनो SSP",
+                category:"primary",
+                packing:"50 Kg",
+                dosage:"50 Kg / Acre (Soil)",
+                description:"Improves phosphorus availability and flowering.",
+                crops:"All crops",
+                image:"all pro/phino_ssp.png"
+            },
+            {
+                id:"mono-ssp-plus",
+                name_en:"Mono SSP+ <br> (With Zinc & Boron)",
+                name_hi:"मोनो SSP+",
+                category:"primary",
+                packing:"50 Kg",
+                dosage:"50 Kg / Acre (Soil)",
+                description:"Enhanced SSP for higher yield and better quality.",
+                crops:"All crops",
+                image:"all pro/phinosspplus.jpg"
+            },
+            {
+                id:"phino-prom",
+                name_en:"Phino-PROM",
+                name_hi:"फिनो-प्रोम",
+                category:"primary",
+                packing:"50 Kg",
+                dosage:"50 Kg / Acre (Soil)",
+                description:"Phosphate rich organic manure improves soil health.",
+                crops:"All crops",
+                image:"all pro/PHINo-PROM.png"
+            },
+            {
+                id:"phino-cal",
+                name_en:"Phino-Cal",
+                name_hi:"फिनो-कैल",
+                category:"primary",
+                packing:"25 Kg",
+                dosage:"25 Kg / Acre (Soil)",
+                description:"Calcium based fertilizer improves fruit quality.",
+                crops:"Vegetables, Fruits",
+                image:"all pro/PHINO CAL.png"
+            },
+            /* ================= MICRO NUTRIENT FERTILIZERS ================= */
+            {
+                id:"zinc-mono",
+                name_en:"ZSM <br> Zinc Sulphate Monohydrate",
+                name_hi:"जिंक सल्फेट मोनो",
+                category:"micro",
+                packing:"1, 5, 10 Kg",
+                dosage:"10 Kg / Acre (Soil)",
+                description:"Corrects zinc deficiency.",
+                crops:"All crops",
+                image:"all pro/ZINC SULPHATE MONOHYDRATE.png"
+            },
+            {
+                id:"sulphur-90",
+                name_en:"Sulphur <br> 90%",
+                name_hi:"सल्फर 90%",
+                category:"micro",
+                packing:"25 Kg",
+                dosage:"10 Kg / Acre (Soil)",
+                description:"Improves oil content and soil pH.",
+                crops:"Oilseeds",
+                image:"all pro/SULPHUR.png"
+            },
+            {
+                id:"bentonite-sulphur",
+                name_en:"Bentonite <br> Sulphur",
+                name_hi:"बेंटोनाइट सल्फर",
+                category:"micro",
+                packing:"25 Kg",
+                dosage:"10–20 Kg / Acre",
+                description:"Long-lasting sulphur availability.",
+                crops:"All crops",
+                image:"all pro/BENTONITE SULPHUR.png"
+            },
+            {
+                id:"magnesium-sulphate",
+                name_en:"Magnesium <br> Sulphate",
+                name_hi:"मैग्नीशियम सल्फेट",
+                category:"micro",
+                packing:"1, 5, 10 Kg",
+                dosage:"10–20 Kg / Acre",
+                description:"Improves photosynthesis and greenness.",
+                crops:"Vegetables, Fruits",
+                image:"all pro/MAGNESIUM SULPHATE.png"
+            },
+            {
+                id:"ferrous-sulphate",
+                name_en:"Ferrous <br> Sulphate",
+                name_hi:"फेरस सल्फेट",
+                category:"micro",
+                packing:"1, 5, 10 Kg",
+                dosage:"20 Kg / Acre",
+                description:"Controls iron deficiency.",
+                crops:"All crops",
+                image:"all pro/FERUS SULPHATE.png"
+            },
+            {
+                id:"manganese-sulphate",
+                name_en:"Manganese <br> Sulphate",
+                name_hi:"मैंगनीज सल्फेट",
+                category:"micro",
+                packing:"1, 5 Kg",
+                dosage:"3 Kg / Acre",
+                description:"Improves photosynthesis.",
+                crops:"All crops",
+                image:"all pro/MANGANESE SULPHATE.png"
+            },
+            {
+                id:"boron-145",
+                name_en:"Boron 14.5%",
+                name_hi:"बोरॉन 14.5%",
+                category:"micro",
+                packing:"1, 5 Kg",
+                dosage:"3 Kg / Acre",
+                description:"Improves pollination and fruit setting.",
+                crops:"All crops",
+                image:"all pro/BORON.png"
+            },
+            {
+                id:"micronutrient <br> -mixture",
+                name_en:"Micronutrient Mixture",
+                name_hi:"सूक्ष्म पोषक मिश्रण",
+                category:"micro",
+                packing:"1, 5, 10 Kg",
+                dosage:"5–10 Kg / Acre",
+                description:"Complete micronutrient solution.",
+                crops:"All crops",
+                image:"all pro/MULTI-MICRONUTRIENT MIXTURE.png"
+            },
+            /* ================= WATER SOLUBLE FERTILIZERS ================= */
+            {
+                id:"npk-191919",
+                name_en:"NPK 19:19:19 HD",
+                name_hi:"NPK 19:19:19",
+                category:"water",
+                packing:"1 Kg",
+                dosage:"2.5 gm / Litre",
+                description:"Boosts vegetative growth.",
+                crops:"All crops",
+                image:"ALL PRO/NPK 19 19 19(HD).png"
+            },
+            {
+                id:"npk-126100",
+                name_en:"NPK 12:61:00 HD",
+                name_hi:"NPK 12:61:00",
+                category:"water",
+                packing:"1 Kg",
+                dosage:"2.5 gm / Litre",
+                description:"High phosphorus fertilizer.",
+                crops:"All crops",
+                image:"ALL PRO/NPK 12;61;00(HD).png"
+            },
+            {
+                id:"npk-130045",
+                name_en:"NPK 13:00:45 HD",
+                name_hi:"NPK 13:00:45",
+                category:"water",
+                packing:"1 Kg",
+                dosage:"2.5 gm / Litre",
+                description:"Improves flowering & fruiting.",
+                crops:"All crops",
+                image:"ALL PRO/NPK 13 00 45(HD).png"
+            },
+            {
+                id:"npk-000050",
+                name_en:"NPK 00:00:50 HD",
+                name_hi:"NPK 00:00:50",
+                category:"water",
+                packing:"1 Kg",
+                dosage:"2.5 gm / Litre",
+                description:"Improves sugar & oil content.",
+                crops:"All crops",
+                image:"ALL PRO/NPK 0000.png"
+            },
+            {
+                id:"npk-005234",
+                name_en:"NPK 00:52:34 HD",
+                name_hi:"NPK 00:52:34",
+                category:"water",
+                packing:"1 Kg",
+                dosage:"2.5 gm / Litre",
+                description:"Improves fruit quality.",
+                crops:"All crops",
+                image:"ALL PRO/NPK 00 52 34.png"
+            },
+            {
+                id:"calcium-nitrate",
+                name_en:"Calcium Nitrate",
+                name_hi:"कैल्शियम नाइट्रेट",
+                category:"water",
+                packing:"1 Kg",
+                dosage:"2.5 gm / Litre",
+                description:"Prevents blossom end rot.",
+                crops:"Vegetables, Fruits",
+                image:"ALL PRO/CALCIUM NITRATE.png"
+            },
+            /* ================= ADVANCED FERTILIZERS / PGR ================= */
+            {
+                id:"samundrika",
+                name_en:"Samundrika",
+                name_hi:"समुंद्रिका",
+                category:"advanced",
+                packing:"Liquid / Granule",
+                dosage:"2–2.5 ml / Litre",
+                description:"Seaweed based plant enhancer.",
+                crops:"All crops",
+                image:"ALL PRO/SAMUNDRIKA.JPG"
+            },
+            {
+                id:"complete-dose",
+                name_en:"Complete Dose",
+                name_hi:"कम्प्लीट डोज",
+                category:"advanced",
+                packing:"10 Kg",
+                dosage:"10 Kg / Acre",
+                description:"Complete combination of micronutrients & PGR.",
+                crops:"All crops",
+                image:"ALL PRO/COMPLETE DOSE.png"
+            },
+            {
+                id:"phino-gold",
+                name_en:"Phino-Gold (Humic Acid 98%)",
+                name_hi:"फिनो-गोल्ड",
+                category:"advanced",
+                packing:"250 g – 1 Kg",
+                dosage:"500 g – 1 Kg / Acre",
+                description:"Improves nutrient uptake & soil structure.",
+                crops:"All crops",
+                image:"ALL PRO/PHINO-GOLD.png"
+            }
+        ];
+
+        // App state
+        let currentLanguage = 'en'; // 'en' or 'hi'
+        let currentCategory = 'all';
+        let currentSearch = '';
+        
+        // DOM elements
+        const productGrid = document.getElementById('productGrid');
+        const productCount = document.getElementById('productCount');
+        const searchInput = document.getElementById('searchInput');
+        const languageToggle = document.getElementById('languageToggle');
+        const languageText = document.getElementById('languageText');
+        const companyName = document.getElementById('company-name');
+        const companyTagline = document.getElementById('company-tagline');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        // Category display names and icons
+        const categoryInfo = {
+            'all': { en: 'All Products', hi: 'सभी उत्पाद', icon: 'fas fa-boxes' },
+            'primary': { en: 'Primary Fertilizers', hi: 'प्राथमिक उर्वरक', icon: 'fas fa-leaf' },
+            'micro': { en: 'Micro Nutrients', hi: 'सूक्ष्म पोषक तत्व', icon: 'fas fa-atom' },
+            'water': { en: 'Water Soluble', hi: 'जल घुलनशील', icon: 'fas fa-tint' },
+            'advanced': { en: 'Advanced / PGR', hi: 'उन्नत / PGR', icon: 'fas fa-flask' }
+        };
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            setupEventListeners();
+        });
+        
+        // Set up event listeners
+        function setupEventListeners() {
+            // Search input
+            searchInput.addEventListener('input', function() {
+                currentSearch = this.value.toLowerCase();
+                renderProducts();
+            });
+            
+            // Language toggle
+            languageToggle.addEventListener('click', function() {
+                currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+                updateLanguage();
+                renderProducts();
+            });
+            
+            // Category filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update category filter
+                    currentCategory = this.getAttribute('data-category');
+                    renderProducts();
+                });
+            });
+        }
+        
+        // Update language throughout the page
+        function updateLanguage() {
+            // Update language toggle button text
+            languageText.textContent = currentLanguage === 'en' ? 'Switch to Hindi' : 'अंग्रेजी में बदलें';
+            
+            // Update company name and tagline
+            if (currentLanguage === 'hi') {
+                companyName.textContent = 'भारत उर्वरक';
+                companyTagline.textContent = 'उच्च गुणवत्ता वाली कृषि उत्पाद';
+                searchInput.placeholder = 'नाम, श्रेणी, या फसलों द्वारा उत्पाद खोजें...';
+            } else {
+                companyName.textContent = 'Bharat Fertilizers';
+                companyTagline.textContent = 'High Quality Agricultural Products';
+                searchInput.placeholder = 'Search products by name, category, or crops...';
+            }
+            
+            // Update filter button texts
+            filterButtons.forEach(button => {
+                const category = button.getAttribute('data-category');
+                button.textContent = categoryInfo[category][currentLanguage];
+            });
+        }
+        
+        // Filter products based on current search and category
+        function filterProducts() {
+            return products.filter(product => {
+                // Filter by category
+                if (currentCategory !== 'all' && product.category !== currentCategory) {
+                    return false;
+                }
+                
+                // Filter by search term
+                if (currentSearch) {
+                    const searchLower = currentSearch.toLowerCase();
+                    const name = (currentLanguage === 'en' ? product.name_en : product.name_hi).toLowerCase();
+                    const description = product.description.toLowerCase();
+                    const crops = product.crops.toLowerCase();
+                    
+                    if (!name.includes(searchLower) && 
+                        !description.includes(searchLower) && 
+                        !crops.includes(searchLower)) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+        }
+        
+        // Render products to the page
+        function renderProducts() {
+            const filteredProducts = filterProducts();
+            
+            // Update product count
+            productCount.textContent = filteredProducts.length;
+            
+            // Clear current products
+            productGrid.innerHTML = '';
+            
+            // If no products match the filter
+            if (filteredProducts.length === 0) {
+                productGrid.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>${currentLanguage === 'en' ? 'No products found' : 'कोई उत्पाद नहीं मिला'}</h3>
+                        <p>${currentLanguage === 'en' ? 'Try adjusting your search or filter criteria' : 'अपनी खोज या फ़िल्टर मानदंडों को समायोजित करने का प्रयास करें'}</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Render each product card
+            filteredProducts.forEach(product => {
+                const productCard = createProductCard(product);
+                productGrid.appendChild(productCard);
+            });
+        }
+        
+        // Create a product card element
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            
+            // Get category display info
+            const categoryDisplay = categoryInfo[product.category][currentLanguage];
+            const categoryIcon = categoryInfo[product.category].icon;
+            
+            // Get product name based on language
+            const productName = currentLanguage === 'en' ? product.name_en : product.name_hi;
+            
+            // Get placeholder icon based on category
+            let placeholderIcon = 'fas fa-seedling';
+            if (product.category === 'micro') placeholderIcon = 'fas fa-atom';
+            if (product.category === 'water') placeholderIcon = 'fas fa-tint';
+            if (product.category === 'advanced') placeholderIcon = 'fas fa-flask';
+            
+            card.innerHTML = `
+                <div class="product-image">
+                    <div class="product-id">${product.id}</div>
+                    <div class="category-badge">
+                        <i class="${categoryIcon}"></i>
+                        <span>${categoryDisplay}</span>
+                    </div>
+                    <img src="${product.image}" alt="${productName}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"${placeholderIcon} placeholder-icon\"></i><p>${productName}</p></div>
+                </div>
+                <div class="product-content">
+                    <div class="product-name">${productName}</div>
+                    <div class="product-info">
+                        <div class="info-item">
+                            <span class="info-label">${currentLanguage === 'en' ? 'Packing' : 'पैकिंग'}</span>
+                            <span class="info-value">${product.packing}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">${currentLanguage === 'en' ? 'Dosage' : 'खुराक'}</span>
+                            <span class="info-value">${product.dosage}</span>
+                        </div>
+                    </div>
+                    <div class="product-description">
+                        ${product.description}
+                    </div>
+                    <div class="product-crops">
+                        <i class="fas fa-tractor crops-icon"></i>
+                        <span><strong>${currentLanguage === 'en' ? 'Recommended for' : 'अनुशंसित फसलें'}:</strong> ${product.crops}</span>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+    </script>
+</body>
+</html>

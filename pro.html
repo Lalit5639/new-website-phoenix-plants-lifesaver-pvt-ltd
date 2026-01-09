@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | Phoenix Plants Lifesaver Pvt. Ltd.</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <h2>Phoenix Plants Lifesaver Pvt. Ltd.</h2>
+  </div>
+</header>
+
+<section class="products-page container">
+  <h1>Our Products</h1>
+
+  <!-- Search & Filter -->
+  <div class="filters" style="margin-bottom: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+    <input type="text" id="searchInput" placeholder="Search product..." style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 200px;">
+    <select id="categoryFilter" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+      <option value="all">All Categories</option>
+      <option value="primary">Primary Fertilizers</option>
+      <option value="secondary">Secondary Fertilizers</option>
+      <option value="micronutrients">Micronutrients</option>
+      <option value="bio">Bio Fertilizers</option>
+    </select>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="grid" id="productGrid">
+    <!-- Products will be generated here -->
+  </div>
+</section>
+
+<script src="product.js"></script>
+<script src="pro.js"></script>
+<script>
+  // Product images mapping
+  const productImages = {
+    "bharat-npk-222211": "ALL PRO/BHARAT NPK.png",
+    "bharat-npk-sicamg": "ALL PRO/BHARAT NPK.png",
+    "bharat-potash": "ALL PRO/BHARAT POTASH.png",
+    "phino-potash": "ALL PRO/PHINO POTASH.png",
+    "mono-ssp": "ALL PRO/SSP.png",
+    // Add more mappings as needed
+  };
+
+  // Generate product cards
+  const productGrid = document.getElementById('productGrid');
+  productGrid.innerHTML = ''; // Clear existing static cards
+
+  products.forEach(product => {
+    const imageSrc = productImages[product.id] || "https://via.placeholder.com/300x200/4CAF50/ffffff?text=Product+Image";
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('data-category', product.category);
+    card.innerHTML = `
+      <img src="${imageSrc}" alt="${product.name_en}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+      <h3>${product.name_en}</h3>
+      <p>${product.description}</p>
+      <p><strong>Packing:</strong> ${product.packing}</p>
+      <p><strong>Dosage:</strong> ${product.dosage}</p>
+      <p><strong>Crops:</strong> ${product.crops}</p>
+      <a href="pro_details.html?id=${product.id}" class="btn">View Details</a>
+    `;
+    productGrid.appendChild(card);
+  });
+</script>
+</body>
+</html>
